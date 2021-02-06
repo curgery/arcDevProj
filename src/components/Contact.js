@@ -257,10 +257,10 @@ export default function Contact(props) {
                   style={{ color: theme.palette.common.blue, fontSize: '1rem' }}
                 >
                   <a
-                    href='mailto:rglover898@optonline.net'
+                    href='mailto:androidgeek54@gmail.com'
                     style={{ textDecoration: 'none', color: 'inherit' }}
                   >
-                    rglover898@optonline.net
+                    androidgeek54@gmail.com
                   </a>
                 </Typography>
               </Grid>
@@ -306,6 +306,7 @@ export default function Contact(props) {
                 value={message}
                 className={classes.message}
                 multiline
+                placeholder='Tell us more about your project.'
                 fullWidth
                 rows={10}
                 onChange={(event) => setMessage(event.target.value)}
@@ -313,6 +314,12 @@ export default function Contact(props) {
             </Grid>
             <Grid item container justify='center' style={{ marginTop: '2em' }}>
               <Button
+                disabled={
+                  name.length === 0 ||
+                  message.length === 0 ||
+                  phoneHelper.length !== 0 ||
+                  emailHelper.length !== 0
+                }
                 variant='contained'
                 className={classes.sendButton}
                 style={{ marginTop: '.5rem' }}
